@@ -1,0 +1,19 @@
+<h1>Justice League Characters</h1>
+<h2>This weeks Leader is {{Leader.Name}} </h2>
+<ul>
+  <h2>Heros</h2>
+  <li *ngFor="let hero of Heros" (click)="onSelect(hero)">
+
+     <span class="badge"><B>{{hero.Name}}</B></span>- {{hero.Skills}}
+   </li>
+   <h2>Villians</h2>
+   <li *ngFor="let villian of Villians" (click)="onSelect(villian)">
+      <span class="badge"><B>{{villian.Name}}</B></span>- {{villian.Skills}}
+    </li>
+</ul>
+
+<div>
+<label><B>Name:</B><input [(ngModel)]="Leader.Name" placeholder="selectedHero">
+</label>
+</div>
+<app-character-detail [hero]="selectedHero"></app-character-detail>
